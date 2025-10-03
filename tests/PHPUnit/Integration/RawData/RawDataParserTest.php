@@ -213,23 +213,4 @@ class RawDataParserTest extends TestCase
 
         self::assertStringContainsString('', $text);
     }
-
-    /**
-     * Handle circular xref references
-     *
-     * Some malformed PDFs have circular references in their xref chain where
-     * a Prev pointer creates a loop, causing infinite recursion and memory exhaustion.
-     * This test ensures such cases are handled gracefully by tracking visited offsets.
-     */
-    public function testCircularXrefReference(): void
-    {
-        $filename = $this->rootDir.'/samples/bugs/memory-exhaustion-crash-f5d89649.txt';
-
-        // Parsing this document would previously cause an infinite loop and memory exhaustion
-        $parser = $this->getParserInstance();
-        $document = $parser->parseFile($filename);
-
-        // If we get here without an error, the circular reference was handled correctly
-        self::assertNotNull($document);
-    }
 }

@@ -152,10 +152,10 @@ class RawDataParser
     /**
      * Decode the Cross-Reference section
      *
-     * @param string $pdfData        PDF data
-     * @param int    $startxref      Offset at which the xref section starts (position of the 'xref' keyword)
-     * @param array  $xref           Previous xref array (if any)
-     * @param array  $visitedOffsets Array of visited offsets to prevent infinite loops
+     * @param string     $pdfData        PDF data
+     * @param int        $startxref      Offset at which the xref section starts (position of the 'xref' keyword)
+     * @param array      $xref           Previous xref array (if any)
+     * @param array<int> $visitedOffsets Array of visited offsets to prevent infinite loops
      *
      * @return array containing xref and trailer data
      *
@@ -233,10 +233,10 @@ class RawDataParser
     /**
      * Decode the Cross-Reference Stream section
      *
-     * @param string $pdfData        PDF data
-     * @param int    $startxref      Offset at which the xref section starts
-     * @param array  $xref           Previous xref array (if any)
-     * @param array  $visitedOffsets Array of visited offsets to prevent infinite loops
+     * @param string     $pdfData        PDF data
+     * @param int        $startxref      Offset at which the xref section starts
+     * @param array      $xref           Previous xref array (if any)
+     * @param array<int> $visitedOffsets Array of visited offsets to prevent infinite loops
      *
      * @return array containing xref and trailer data
      *
@@ -864,9 +864,9 @@ class RawDataParser
     /**
      * Get Cross-Reference (xref) table and trailer data from PDF document data.
      *
-     * @param int   $offset        xref offset (if known)
-     * @param array $xref          previous xref array (if any)
-     * @param array $visitedOffsets array of visited offsets to prevent infinite loops
+     * @param int        $offset        xref offset (if known)
+     * @param array      $xref          previous xref array (if any)
+     * @param array<int> $visitedOffsets array of visited offsets to prevent infinite loops
      *
      * @return array containing xref and trailer data
      *
